@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <!-- ng-app: định nghĩa ra khu vực được phép sử angularjs -->
+    <div ng-controller="domeCotroller">
+        <!-- ng-controller: Định nghĩa ra khu vực được controller điều khiển  -->
+        <!-- hiển thị biến -->
+        <h1>{{xinchao}}</h1>
+        <h2>{{tenSV}}</h2>
+        <!-- Đối tượng -->
+        <h2>{{sinhVien.maSV}}</h2>
+        <!-- if -->
+        <h2 ng-if="sinhVien.namSinh <= 2004">Ế hết sức Ế</h2>
+        <!-- switch case -->
+        <span ng-switch="sinhVien.namSinh">
+            <span ng-switch-when="2004">Ế cấp 1</span>
+            <span ng-switch-when="2003">Ế cấp 2</span>
+            <span ng-switch-when="2002">Ế cấp 3</span>
+            <span ng-switch-when="2001">Ế cấp cao đẳng</span>
+            <span ng-switch-when="2000">Ế cấp đại học</span>
+        </span>
+        <!-- ng-show -->
+        <table>
+            <tr>
+                <th>Mã SV</th>
+                <th>Tên SV</th>
+                <th>Năm Sinh</th>
+            </tr>
+            <tr ng-repeat="sv in sVien">
+                <td>{{sv.maSV}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="app.js"></script>
+    <!-- Khai báo 1 mảng đối tượng công dân -->
+    <!-- Ten, NamSinh, CMT, SDT, DC -->
+    <!-- hiển thông tin sau ra bảng -->
+    <!-- Ten, tuoi , CMT, SDT, DC, trangThai -->
+    <!-- TrangThai: nếu đủ tuổi từ 18 - 26 -> Có thể nhập ngũ / Không đủ để nhập ngũ -->
+</body>
+</html>
