@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.js"></script>
+</head>
+<body ng-app="myRoute">
+    <header>Đây là phần header</header>
+    <nav>
+        <ul>
+            <li><a href="#!/trang-chu">Trang chủ</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div ng-view>
+
+        </div>
+    </main>
+    <footer>Đây là footer</footer>
+    <script src="route/route.js"></script>
+</body>
+</html>

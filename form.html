@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <!-- <h1>{{hi}}</h1> -->
+        <form>
+            <!-- ng-model: Được dùng để buộc dữ liệu 2 chiều -->
+            <!-- 1: $scope -->
+            <!-- 2: Điều khiển từ form như các thẻ input, select, textarea -->
+            <input type="text" ng-model="name">
+            <!-- <h1>{{name}}</h1> -->
+            <!-- Lưu ý: Cần đặt tên của ng-model tương ướng với $scope -->
+            <!-- radio -->
+            <label for="">Giới tính</label>
+            <input type="radio" value="1" ng-model="input.gender">Nam
+            <input type="radio" value="2" ng-model="input.gender">Nữ
+            <!-- checkbox -->
+            <label for="">Danh sách ny old</label>
+            <input type="checkbox" ng-model="input.danhSach.A">Nguyễn Thị A
+            <input type="checkbox" ng-model="input.danhSach.B">Nguyễn Thị B
+            <input type="checkbox" ng-model="input.danhSach.C">Nguyễn Thị C
+            <input type="checkbox" ng-model="input.danhSach.D">Nguyễn Thị D
+            <!-- select -->
+            <!-- Cấp 1 -->
+            <label for="">Danh mục sản phẩm</label>
+            <select ng-model="input.select">
+                <option value="1">Bia</option>
+                <option value="2">Rượu</option>
+                <option value="3">Thuốc lá</option>
+            </select>
+            <!-- Cấp 2 -->
+            <!-- ng-repeat -->
+            <label for="">Danh mục sản phẩm cấp 2</label>
+            <select ng-model="input.select1">
+                <option ng-repeat="dm in danhMuc" value="{{dm.id}}">{{dm.name}}</option>
+            </select>
+            <button ng-click="submit()">Gửi</button>
+            <!-- nhập a,b. Hiện tổng hiệu tích thương -->
+
+        </form>
+    </div>
+    <script src="controllers/form.js"></script>   
+</body>
+</html>
