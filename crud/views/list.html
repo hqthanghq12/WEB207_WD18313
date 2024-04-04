@@ -1,13 +1,18 @@
 <h1>{{hi}}</h1>
+<a href="#!/product/add">Add</a>
 <table>
     <tr>
         <th>ID</th>
         <th>Tên</th>
         <th>Giá</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
+    <tr ng-repeat="pr in products">
+        <td>{{pr.id}}</td>
+        <td>{{pr.name}}</td>
+        <td>{{pr.price}}</td>
+        <td>
+            <button ng-click="deleteData(pr.id)">Xóa</button>
+            <button ng-click="onEdit(pr.id)">Sửa</button>
+        </td>
     </tr>
 </table>

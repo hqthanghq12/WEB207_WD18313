@@ -1,0 +1,9 @@
+<form>
+    <label>Tên</label>
+    <input type="text" ng-model="inputValue.name">
+    <span ng-if="checkDL.name == true">Bạn cần nhập tên</span>
+    <label>Giá</label>
+    <input type="text" ng-model="inputValue.price">
+    <span ng-if="checkDL.price == true">Bạn cần nhập giá</span>
+    <button ng-click="submitAdd()">Gửi</button>
+</form>

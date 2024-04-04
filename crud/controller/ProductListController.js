@@ -13,4 +13,19 @@ window.ProductListController = function($scope, $http, $location){
         })
     }
     $scope.listProduct();
+    $scope.deleteData = function(id){
+       let confirm = window.confirm("Ban có chắc chắn muốn xóa hay không??");
+       if(confirm){
+        $http.delete(`${apiUrl}/${id}`).then(function(res){
+            // console.log(res);
+            if(res.status == 200){
+                $scope.listProduct();
+            }
+        })
+       }
+    }
+    $scope.onEdit = function(id){
+        // console.log(id);
+        $location.path(`/product/${id}/edit`);
+    }
 }
